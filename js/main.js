@@ -9,7 +9,7 @@ function initialize(){
     header.id = 'headerID';
     
     let btn = document.createElement("button");
-    btn.innerHTML = "Get Weather";
+    btn.innerText = "Get Weather";
     document.body.appendChild(btn);
     btn.id = 'buttonID';
     
@@ -23,15 +23,15 @@ function initialize(){
 initialize();
     console.log(initialize);
 
-    // let weatherInfo = [];
-    // let displayState = {
-    //     city:[],
-    //     kTemp:[],
-    //     cTemp:[],
-    //     fTemp:[],
-    //     condition:[],
-    //     image:[]  
-    // };
+    let weatherInfo = [];
+    let displayState = {
+        city:[],
+        kTemp:[],
+        cTemp:[],
+        fTemp:[],
+        condition:[],
+        image:[]  
+    };
 
     // btn.addEventlistener('click', importData);
 
