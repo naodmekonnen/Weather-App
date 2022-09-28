@@ -23,6 +23,8 @@ function initialize(){
 initialize();
     console.log(initialize);
     
+
+    // btn.addEventlistener('click', importData);
     
     let API = 'https://api.openweathermap.org/data/2.5/weather?zip=94087,us&appid=2ac06639cc28fd36cdb411b506b44376';
 
@@ -31,6 +33,9 @@ initialize();
         try{
             let response = await axios.get(url);
             console.log(response.data);
+            function displayData(){
+                // location.innerHTML = data.name;
+            }
         }
         catch(error){
             console.log(error);
