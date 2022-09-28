@@ -24,7 +24,7 @@ initialize();
     console.log(initialize);
     
     
-    let API = 'https://api.openweathermap.org/data/2.5/weather?zip=40514,us&appid=2ac06639cc28fd36cdb411b506b44376';
+    let API = 'https://api.openweathermap.org/data/2.5/weather?zip=94087,us&appid=2ac06639cc28fd36cdb411b506b44376';
 
     async function importData(url){
         
@@ -37,5 +37,5 @@ initialize();
         }
     }
     
-importData(API);
+    importData(API);
     
