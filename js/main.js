@@ -38,8 +38,7 @@ btn.addEventListener('click', importData);
             condition.innerText = data.weather[0].main;
             // image.innerText = data.weather[1].icon;
             // icon.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon + '@2x.png';
-            
-        }
+            }
         catch(error){
             // alert("hello");
             console.log(error);

@@ -1,0 +1,8 @@
+#headerID, #buttonID, #formID{
+    display:flex;
+    margin: auto;
+    width: 40%;
+    border: 3px solid rgb(102, 111, 102);
+    padding: 10px;
+    text-align: center;
+} 
