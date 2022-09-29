@@ -22,8 +22,6 @@ let icon = document.getElementById('image');
 
 
 btn.addEventListener('click', importData);
-
-
     async function importData(){
     
         let zipcode = document.getElementById('formID').value;
@@ -37,8 +35,8 @@ btn.addEventListener('click', importData);
             kTemp.innerText = Math.round(data.main.temp) + '°' + 'K';
             fTemp.innerText = Math.round((data.main.temp - 273.15) * 1.8 + 32) + '°' + 'F';
             cTemp.innerText = Math.round((data.main.temp - 273.15)) + '°';
-            condition = data.weather[0].description;
-            image.innerText = data.weather[1].icon;
+            condition.innerText = data.weather[0].main;
+            // image.innerText = data.weather[1].icon;
             // icon.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon + '@2x.png';
             
         }
