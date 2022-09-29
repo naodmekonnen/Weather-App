@@ -13,7 +13,6 @@ let zipform = document.createElement('input');
     document.body.appendChild(zipform);
     zipform.id = 'formID';
 
-// let zipInfo = document.getElementById('formID');
 let city = document.getElementById('location');
 let kTemp = document.getElementById('kelvin');
 let cTemp = document.getElementById('celcius');
@@ -21,24 +20,25 @@ let fTemp = document.getElementById('fahrenheit');
 let condition = document.getElementById('description');
 let icon = document.getElementById('image');
 
+
 btn.addEventListener('click', importData);
 
-    let zipcode = document.getElementById('formID').value;
-    // let url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=2ac06639cc28fd36cdb411b506b44376`;
 
     async function importData(){
     
+        let zipcode = document.getElementById('formID').value;
+
         try{
             let response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=2ac06639cc28fd36cdb411b506b44376`);
             console.log(response.data);
             data = await response.data;
 
             city.innerText = data.name;
-            kTemp.innerText = data.main.temp + '°' + 'K';
-            fTemp.innerText = (data.main.temp - 273.15) * 1.8 + 32 + 'F';
-            cTemp.innerText = (data.main.temp - 273.15);
+            kTemp.innerText = Math.round(data.main.temp) + '°' + 'K';
+            fTemp.innerText = Math.round((data.main.temp - 273.15) * 1.8 + 32) + '°' + 'F';
+            cTemp.innerText = Math.round((data.main.temp - 273.15)) + '°';
             condition = data.weather[0].description;
-            image.innerText = data.weather[0].icon;
+            image.innerText = data.weather[1].icon;
             // icon.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon + '@2x.png';
             
         }
