@@ -17,11 +17,7 @@ let citi = document.createElement('p');
     citi.innerText = 'Town';
     document.body.appendChild(citi);
 
-
-
-
-
-let city = document.getElementById('location');
+    let city = document.getElementById('location');
 let kTemp = document.getElementById('kelvin');
 let cTemp = document.getElementById('celcius');
 let fTemp = document.getElementById('fahrenheit');
