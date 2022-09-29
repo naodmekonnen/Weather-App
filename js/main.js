@@ -13,6 +13,39 @@ let zipform = document.createElement('input');
     document.body.appendChild(zipform);
     zipform.id = 'formID';
     
+let city = document.createElement('p');
+    city.innerText = " ";
+    document.body.appendChild(city);
+    city.id = 'location';
+
+let kTemp = document.createElement('p');
+    kTemp.innerText = " ";
+    document.body.appendChild(kTemp);
+    kTemp.id = 'kelvin';
+
+
+let cTemp = document.createElement('p');
+    cTemp.innerText = " ";
+    document.body.appendChild(cTemp);
+    cTemp.id = 'celcius';
+
+let fTemp = document.createElement('p');
+    fTemp.innerText = " ";
+    document.body.appendChild(fTemp);
+    fTemp.id = 'fahrenheit';
+
+let condition = document.createElement('p');
+    condition.innerText = " ";
+    document.body.appendChild(condition);
+    condition.id = 'description';
+
+let icon = document.createElement('img');
+    icon.innerText = " ";
+    document.body.appendChild(icon);
+    icon.id = 'image';
+
+
+
 let displayState = {
         city:'',
         kTemp:'',
@@ -32,11 +65,11 @@ let displayState = {
         try{
             let response = await axios.get(url);
             console.log(response.data);
-            weatherInfo = await response.data;
+            data = await response.data;
 
             city.innerText = data.name;
             kTemp.innerText = data.main.temp + '°' + 'K';
-            fTemp.innerText = (data.main.temp - 273.15) * 1.8 + 32 + 'f';
+            fTemp.innerText = (data.main.temp - 273.15) * 1.8 + 32 + 'F';
             cTemp.innerText = (data.main.temp - 273.15);
             condition = data.weather[0].description;
             image.innerText = data.weather[0].icon;
@@ -46,8 +79,6 @@ let displayState = {
             // city.innerText = "Enter a valid zip"
             console.log(error);
         }
-    }
-
-    
+    };
     importData(API);
     
