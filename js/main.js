@@ -1,30 +1,25 @@
-// const axios = require('axios')
-
-
-
-    let header = document.createElement('h1');
+let header = document.createElement('h1');
     header.innerText = "WeatherApp";
     document.body.appendChild(header);
     header.id = 'headerID';
     
-    let btn = document.createElement("button");
+let btn = document.createElement("button");
     btn.innerText = "Get Weather";
     document.body.appendChild(btn);
     btn.id = 'buttonID';
     
-    let zipform = document.createElement('input');
+let zipform = document.createElement('input');
     zipform.placeholder = 'Enter Zipcode';
     document.body.appendChild(zipform);
     zipform.id = 'formID';
     
-    let weatherInfo = [];
-    let displayState = {
-        city:[],
-        kTemp:[],
-        cTemp:[],
-        fTemp:[],
-        condition:[],
-        image:[]  
+let displayState = {
+        city:'',
+        kTemp:'',
+        cTemp:'',
+        fTemp:'',
+        condition:'',
+        image:''  
     };
 
     btn.addEventListener('click', importData);
@@ -48,7 +43,7 @@
             
         }
         catch(error){
-            city.innerText = "Enter a valid zip"
+            // city.innerText = "Enter a valid zip"
             console.log(error);
         }
     }
