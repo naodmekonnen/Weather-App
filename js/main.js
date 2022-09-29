@@ -43,7 +43,7 @@ btn.addEventListener('click', importData);
             
         }
         catch(error){
-            "hello";
+            // alert("hello");
             console.log(error);
         };
     };
