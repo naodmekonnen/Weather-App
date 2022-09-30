@@ -33,7 +33,7 @@ const   condition = document.createElement('p');
         condition.textContent = ' ';
         condition.id = 'description';
         
-const   icons = document.createElement('div');
+const   icons = document.createElement('img');
         icons.innerHTML = ' ';
         icons.id = 'images';
 
@@ -56,8 +56,8 @@ button.addEventListener('click', importData);
             fTemp.innerText = Math.round((data.main.temp - 273.15) * 1.8 + 32) + '°F';
             cTemp.innerText = Math.round((data.main.temp - 273.15)) + '°C';
             condition.innerText = data.weather[0].main;
-            icons.innerText = data.weather[1].icon;
-            icons.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon;
+            pics = data.weather[0].icon;
+            icons.src = `https://openweathermap.org/img/wn/${pics}.png`;
             }
         catch(error){
             console.log(error);
