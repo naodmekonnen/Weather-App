@@ -41,21 +41,6 @@ const   icons = document.createElement('div');
 myDiv.append(header,form,button,city,kTemp,cTemp,fTemp,condition,icons);
 
 
-// let city = document.getElementById('location');
-// let kTemp = document.getElementById('kelvin');
-// let cTemp = document.getElementById('celcius');
-// let fTemp = document.getElementById('fahrenheit');
-// let condition = document.getElementById('description');
-// let icon = document.getElementById('image');
-
-
-// let weatherInfo = {
-//     city:" ",
-//     condition:" ",
-//     icon:" ",
-//     temp:0,
-// };
-
 button.addEventListener('click', importData);
     async function importData(){
     
@@ -65,12 +50,6 @@ button.addEventListener('click', importData);
             let response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&appid=2ac06639cc28fd36cdb411b506b44376`);
             console.log(response.data);
             data = await response.data;
-
-            // weatherInfo.city=data.name;
-            // weatherInfo.condition=data.weather[0].main;
-            // weatherInfo.temp=data.main.temp;
-            // weatherInfo.icon=data.weather[0].icon;
-
 
             city.innerText = data.name;
             kTemp.innerText = Math.round(data.main.temp) + '°' + 'K';
