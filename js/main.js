@@ -31,17 +31,17 @@ const   fTemp = document.createElement('p');
 
 const   condition = document.createElement('p');
         condition.textContent = ' ';
-        condition.id = 'description'        
-
+        condition.id = 'description';
+        
 const   icons = document.createElement('div');
         icons.innerHTML = ' ';
         icons.id = 'images';
 
-
-myDiv.append(header,form,button,city,kTemp,cTemp,fTemp,condition,icons);
-
+        myDiv.append(header,form,button,city,kTemp,cTemp,fTemp,condition,icons);
 
 button.addEventListener('click', importData);
+
+    
     async function importData(){
     
         let zipcode = document.getElementById('formID').value;
@@ -56,7 +56,7 @@ button.addEventListener('click', importData);
             fTemp.innerText = Math.round((data.main.temp - 273.15) * 1.8 + 32) + '°F';
             cTemp.innerText = Math.round((data.main.temp - 273.15)) + '°C';
             condition.innerText = data.weather[0].main;
-            image.innerText = data.weather[1].icon;
+            icons.innerText = data.weather[1].icon;
             icon.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon;
             }
         catch(error){
