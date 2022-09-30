@@ -57,11 +57,11 @@ button.addEventListener('click', importData);
             cTemp.innerText = Math.round((data.main.temp - 273.15)) + '°C';
             condition.innerText = data.weather[0].main;
             icons.innerText = data.weather[1].icon;
-            icon.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon;
+            icons.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon;
             }
         catch(error){
             console.log(error);
         };
-    };
+};
     importData();
-    
+
