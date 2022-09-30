@@ -17,13 +17,20 @@ let citi = document.createElement('p');
     citi.innerText = 'Town';
     document.body.appendChild(citi);
 
-    let city = document.getElementById('location');
+let city = document.getElementById('location');
 let kTemp = document.getElementById('kelvin');
 let cTemp = document.getElementById('celcius');
 let fTemp = document.getElementById('fahrenheit');
 let condition = document.getElementById('description');
 let icon = document.getElementById('image');
 
+
+let weatherInfo = {
+    city:" ",
+    condition:" ",
+    icon:" ",
+    temp:0,
+};
 
 btn.addEventListener('click', importData);
     async function importData(){
@@ -35,13 +42,19 @@ btn.addEventListener('click', importData);
             console.log(response.data);
             data = await response.data;
 
+            // weatherInfo.city=data.name;
+            // weatherInfo.condition=data.weather[0].main;
+            // weatherInfo.temp=data.main.temp;
+            // weatherInfo.icon=data.weather[0].icon;
+
+
             city.innerText = data.name;
             kTemp.innerText = Math.round(data.main.temp) + '°' + 'K';
             fTemp.innerText = Math.round((data.main.temp - 273.15) * 1.8 + 32) + '°' + 'F';
             cTemp.innerText = Math.round((data.main.temp - 273.15)) + '°';
             condition.innerText = data.weather[0].main;
-            // image.innerText = data.weather[1].icon;
-            // icon.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon + '@2x.png';
+            image.innerText = data.weather[1].icon;
+            icon.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon;
             }
         catch(error){
             // alert("hello");
