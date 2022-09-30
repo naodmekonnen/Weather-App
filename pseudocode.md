@@ -11,30 +11,30 @@
 2. Create Variables to display values
 2. Variables:
     * header: header/title
-        *createElement('p')
-    *form:(to enter zipinfo)
-        *createElement('input')
-        *assign placeholder
-        *give name and id
-    *button:to submit zipcode addEventlistener
-        *createElement('button')
-        *give name and id
-    *city:display city
-       *createElement('p')
-       *give name and id
-    *kTemp:temperature in kelvin    
-        *createElement('p')
-        *give name and id
-    *cTemp:temperature in celsius
-        *createElement('p')
-        *give name and id
-    *fTemp:fahrenheit
-        *createElement('p')
-        *give name and id
-    *condition:description of weather condition
-        *createElement('p')
-        *give name and id
-    *icons:display icon corresponding to the condition
+        * createElement('p')
+    * form:(to enter zipinfo)
+        * createElement('input')
+        * assign placeholder
+        * give name and id
+    * button:to submit zipcode addEventlistener
+        * createElement('button')
+        * give name and id
+    * city:display city
+       * createElement('p')
+       * give name and id
+    * kTemp:temperature in kelvin    
+        * createElement('p')
+        * give name and id
+    * cTemp:temperature in celsius
+        * createElement('p')
+        * give name and id
+    * fTemp:fahrenheit
+        * createElement('p')
+        * give name and id
+    * condition:description of weather condition
+        * createElement('p')
+        * give name and id
+    * icons:display icon corresponding to the condition
 3. END
 
 1. BEGIN
