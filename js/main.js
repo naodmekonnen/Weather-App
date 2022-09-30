@@ -60,7 +60,6 @@ button.addEventListener('click', importData);
             icon.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon;
             }
         catch(error){
-            // alert("hello");
             console.log(error);
         };
     };
