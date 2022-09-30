@@ -3,7 +3,7 @@
 2. Create DOM elements dynamically
 3. Use ID of main div in HTML to populate weather data
 4. Create variables for the correspodnding values from the weather data to display
-5. set values of created values as empty strings
+5. set values of created variables(p tag and img variable only) as empty strings
 6. append created variables to the 'main' div 
 7. END
 
@@ -35,7 +35,6 @@
         -createElement('p')
         --give name and id
     -icons:display icon corresponding to the condition
-
 3. END
 
 1. BEGIN
@@ -45,11 +44,12 @@
 5. END
 
 1. BEGIN
-2. Create an async Function: importData to import data from API
+2. Create an async Function: to import data from API
 3. use axios and the url and API key provided 
 4. set a Variable 'data' to the data returned
 5. use the dot notation to display data from the API 
 6. use Math.round on the temperature values to return integers
 7. convert temperature data into celcius and fahrenheit
-8. 
+8. call Function to populate populate imported data in the html
+9. END
 
