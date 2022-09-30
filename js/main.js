@@ -1,38 +1,62 @@
-let header = document.createElement('h1');
-    header.innerText = "WeatherApp";
-    document.body.appendChild(header);
-    header.id = 'headerID';
-    
-let btn = document.createElement("button");
-    btn.innerText = "Get Weather";
-    document.body.appendChild(btn);
-    btn.id = 'buttonID';
-    
-let zipform = document.createElement('input');
-    zipform.placeholder = 'Enter Zipcode';
-    document.body.appendChild(zipform);
-    zipform.id = 'formID';
 
-let citi = document.createElement('p');
-    citi.innerText = 'Town';
-    document.body.appendChild(citi);
+const   myDiv = document.getElementById('main');
 
-let city = document.getElementById('location');
-let kTemp = document.getElementById('kelvin');
-let cTemp = document.getElementById('celcius');
-let fTemp = document.getElementById('fahrenheit');
-let condition = document.getElementById('description');
-let icon = document.getElementById('image');
+const   header = document.createElement('h2');
+        header.textContent = 'Weather App';
+        header.id = 'headerID';
+
+const   form = document.createElement('input');
+        form.placeholder = 'Enter Zipcode';
+        form.id = 'formID';
+
+const   button = document.createElement('button');
+        button.textContent = 'Get Weather';
+        button.id = 'buttonID';
+
+const   city = document.createElement('p');
+        city.textContent = ' ';
+        city.id = 'location';
+
+const   kTemp = document.createElement('p');
+        kTemp.textContent = ' ';
+        kTemp.id = 'kelvin';
+
+const   cTemp = document.createElement('p');
+        cTemp.textContent = ' ';
+        cTemp.id = 'celcius';
+
+const   fTemp = document.createElement('p');
+        fTemp.textContent = ' ';
+        fTemp.id = 'fahrenheit';
+
+const   condition = document.createElement('p');
+        condition.textContent = ' ';
+        condition.id = 'description'        
+
+const   icons = document.createElement('div');
+        icons.innerHTML = ' ';
+        icons.id = 'images';
 
 
-let weatherInfo = {
-    city:" ",
-    condition:" ",
-    icon:" ",
-    temp:0,
-};
+myDiv.append(header,form,button,city,kTemp,cTemp,fTemp,condition,icons);
 
-btn.addEventListener('click', importData);
+
+// let city = document.getElementById('location');
+// let kTemp = document.getElementById('kelvin');
+// let cTemp = document.getElementById('celcius');
+// let fTemp = document.getElementById('fahrenheit');
+// let condition = document.getElementById('description');
+// let icon = document.getElementById('image');
+
+
+// let weatherInfo = {
+//     city:" ",
+//     condition:" ",
+//     icon:" ",
+//     temp:0,
+// };
+
+button.addEventListener('click', importData);
     async function importData(){
     
         let zipcode = document.getElementById('formID').value;
@@ -50,8 +74,8 @@ btn.addEventListener('click', importData);
 
             city.innerText = data.name;
             kTemp.innerText = Math.round(data.main.temp) + '°' + 'K';
-            fTemp.innerText = Math.round((data.main.temp - 273.15) * 1.8 + 32) + '°' + 'F';
-            cTemp.innerText = Math.round((data.main.temp - 273.15)) + '°';
+            fTemp.innerText = Math.round((data.main.temp - 273.15) * 1.8 + 32) + '°F';
+            cTemp.innerText = Math.round((data.main.temp - 273.15)) + '°C';
             condition.innerText = data.weather[0].main;
             image.innerText = data.weather[1].icon;
             icon.src = 'https://openweathermap.org/img/wn' + data.weather[0].icon;
